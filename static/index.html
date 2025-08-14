@@ -31,26 +31,50 @@
     </div>
   </div>
 
-  <!-- Admin Dot and Panels -->
-  <div id="admin-dot" title="Admin Panel"></div>
-  <div id="admin-panel" style="display:none;">
-    <button class="close-btn" id="close-admin-panel">&times;</button>
-    <h2>Admin Panel</h2>
-    <p>Welcome, <span id="admin-name"></span>!</p>
-    <button id="open-chosenone" style="display:none;">User Management Panel</button>
+  <!-- Admin Name Prompt Overlay -->
+  <div id="name-overlay" class="name-overlay" style="display:none;">
+    <div class="name-overlay-content">
+      <h2>Enter your name</h2>
+      <input type="text" id="user-name-input" maxlength="32" placeholder="Your name..." />
+      <button id="user-name-confirm">Enter</button>
+    </div>
   </div>
-  <div id="chosenone-panel" style="display:none;">
-    <button class="close-btn" id="close-chosenone-panel">&times;</button>
-    <h2>User Management Panel</h2>
-    <div id="user-list"></div>
+
+  <!-- Blocked Overlay -->
+  <div id="blocked-overlay" class="blocked-overlay" style="display:none;">
+    <div class="blocked-overlay-content">
+      <h2>Access Blocked</h2>
+      <p id="blocked-message"></p>
+    </div>
   </div>
-  <div id="blocked-message" style="display:none;">
-    <h2>You have been blocked.</h2>
-    <p id="blocked-custom-message">Access denied.</p>
+
+  <!-- Admin Dot -->
+  <div class="admin-dot" id="admin-dot" title="Admin Panel"></div>
+
+  <!-- Admin Verify Popup -->
+  <div id="admin-verify" class="admin-panel" style="display:none;">
+    <div class="admin-panel-content">
+      <h2>Admin Verification</h2>
+      <input type="text" id="admin-name-input" placeholder="Enter admin name" autocomplete="off" />
+      <button id="admin-verify-btn">Verify</button>
+      <button id="close-admin-verify" class="close-btn">✕</button>
+      <div id="admin-verify-log" style="margin-top:10px;font-size:14px;"></div>
+    </div>
   </div>
-  <div id="incorrect-admin" style="display:none;">
-    <h2>Incorrect admin name.</h2>
-    <p>Access denied.</p>
+
+  <!-- Admin Panel Popup -->
+  <div id="admin-panel" class="admin-panel" style="display:none;">
+    <div class="admin-panel-content">
+      <h2>Admin Panel</h2>
+      <div id="admin-users-list"></div>
+      <hr>
+      <label>Send message to user:</label>
+      <input type="text" id="troll-user-input" placeholder="Name" />
+      <input type="text" id="troll-message-input" placeholder="Message" />
+      <button id="send-troll-btn">Send</button>
+      <button id="close-admin-btn" class="close-btn">✕</button>
+      <div id="admin-panel-log" style="margin-top:10px;font-size:14px;"></div>
+    </div>
   </div>
 
   <!-- Your original scripts -->
